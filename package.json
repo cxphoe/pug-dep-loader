@@ -1,0 +1,46 @@
+{
+  "name": "pug-dep-loader",
+  "version": "1.0.0",
+  "description": "loader loading dependencies of pug templates, and pacakging",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "pug",
+    "dependency",
+    "img",
+    "package"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "loader-utils": "^1.1.0",
+    "pug-lexer": "^4.0.0",
+    "pug-parser": "^5.0.0",
+    "pug-walk": "^1.1.7",
+    "slash": "^2.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.11.0",
+    "eslint-config-egg": "^6.0.0",
+    "fs-extra": "^7.0.1",
+    "mocha": "^6.0.2"
+  },
+  "peerDependencies": {
+    "pug": "^2.0.0"
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/cxphoe/pug-dep-loader.git"
+  },
+  "author": "phoe",
+  "bugs": {
+    "url": "https://github.com/cxphoe/pug-dep-loader/issues"
+  },
+  "homepage": "https://github.com/cxphoe/pug-dep-loader#readme"
+}

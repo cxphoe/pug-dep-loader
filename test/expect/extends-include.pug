@@ -1,0 +1,12 @@
+html
+  head
+    title 我的站点 - #{title}
+    script(src='/jquery.js')
+    script(src='/pets.js')
+  body
+    h1= title
+    - var pets = ['猫', '狗']
+    each petName in pets
+      p= petName
+    #footer
+      p 一些页脚的内容
