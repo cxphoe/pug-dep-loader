@@ -11,7 +11,7 @@ const getScript = (fileInfo) => {
       if (requirePaths.hasOwnProperty(originPath)) {
         var rp = requirePaths[originPath];
         while (tpl.indexOf(originPath) > -1) {
-          tpl = tpl.replace(originPath, '"' + rp + '"');
+          tpl = tpl.replace(originPath, rp);
         }
       }
     }
