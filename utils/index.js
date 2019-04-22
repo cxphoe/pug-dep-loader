@@ -60,7 +60,7 @@ exports.requireAllResources = function (filepaths, resultObjName = 'requirePaths
 try {
   ${resultObjName}['${filepath}'] = require('${slash(filepath)}');
 } catch (error) {
-  throw new Error('${chalk.red('Error in ') + chalk.cyan(key)}:\n' + error.message);
+  throw new Error('Error in ${key}:\\n' + error.message);
 }
       `
       ))),
