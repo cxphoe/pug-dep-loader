@@ -1,5 +1,5 @@
 {
-  "name": "pug-dep-loader",
+  "name": "pug-package-loader",
   "version": "1.0.0",
   "description": "loader loading dependencies of pug templates, and pacakging",
   "main": "index.js",
@@ -36,11 +36,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/cxphoe/pug-dep-loader.git"
+    "url": "git+ssh://git@github.com/cxphoe/pug-package-loader.git"
   },
   "author": "phoe",
   "bugs": {
-    "url": "https://github.com/cxphoe/pug-dep-loader/issues"
+    "url": "https://github.com/cxphoe/pug-package-loader/issues"
   },
-  "homepage": "https://github.com/cxphoe/pug-dep-loader#readme"
+  "homepage": "https://github.com/cxphoe/pug-package-loader#readme"
 }

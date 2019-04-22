@@ -1,10 +1,10 @@
-# pug-dep-loader
+# pug-package-loader
 
 loader loading dependencies of pug templates, and packaging all pug templates into one.
 ## Install
 
 ```
-npm install --save-dev pug-dep-loader
+npm install --save-dev pug-package-loader
 ```
 
 ## Manageable Dependencies
@@ -27,7 +27,7 @@ pug inheritance refers to: https://pugjs.org/language/inheritance.html
     img(src="../path/to/name.ext")
     img(src='../path/to/name.ext')
 
-as long as you config the pug-dep-loader like this:
+as long as you config the pug-package-loader like this:
 
 ```
 module.exports = {
@@ -35,7 +35,7 @@ module.exports = {
     rules: [{
       test: /\.pug$/,
       use: {
-        loader: 'pug-dep-loader',
+        loader: 'pug-package-loader',
         options: {
           attrs: [
             'img:src',
@@ -61,7 +61,7 @@ module.exports = {
     rules: [{
       test: /\.pug$/,
       use: {
-        loader: 'pug-dep-loader',
+        loader: 'pug-package-loader',
         options: {
           attrs: [
             // set your custom combinations
