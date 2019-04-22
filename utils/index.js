@@ -1,5 +1,6 @@
 const path = require('path');
 const slash = require('slash');
+const chalk = require('chalk');
 
 exports.getLineBreak = function (str) {
   if (!str) return '\n';
@@ -48,15 +49,21 @@ exports.objectAssign = function (obj1, obj2) {
 
 /**
  * joint scripts to require resources, and save the result in an object
- * @param {string[]} filepaths absolute paths of local depedencies
+ * @param {{[filepath: string]: string[]}} filepaths absolute paths of local depedencies
  * @param {string} resultObjName the name of object that will save the require result of dependencies
  */
 exports.requireAllResources = function (filepaths, resultObjName = 'requirePaths') {
   const scripts = [
     `var ${resultObjName} = {}`,
-    ...filepaths.map(
-      (key) => `${resultObjName}['${key}'] = require('${slash(key)}');`
-    ),
+    ...exports.mergeArrays(...Object.keys(filepaths).map(
+      (key) => filepaths[key].map((filepath) => `
+try {
+  ${resultObjName}['${filepath}'] = require('${slash(filepath)}');
+} catch (error) {
+  throw new Error('${chalk.red('Error in ') + chalk.cyan(key)}:\n' + error.message);
+}
+      `
+      ))),
   ];
   return scripts.join('\n');
 };

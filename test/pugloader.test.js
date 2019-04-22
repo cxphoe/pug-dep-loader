@@ -52,11 +52,12 @@ describe('Pugloader', () => {
   it('img:src requirement', () => {
     loader.entry = utils.resolve('./case/page-require.pug');
     const { content, deps } = loader.load();
+    const depValues = utils.flatObjectValues(deps);
     const imgRequires = [
       path.resolve(__dirname, 'img.png'),
     ];
     for (const require of imgRequires) {
-      assert(deps.includes(require));
+      assert(depValues.includes(require));
     }
     utils.checkResult(content, 'img-require');
   });
@@ -69,11 +70,12 @@ describe('Pugloader', () => {
     });
 
     const { content, deps } = loader.load();
+    const depValues = utils.flatObjectValues(deps);
     const imgRequires = [
       path.resolve(__dirname, 'img.png'),
     ];
     for (const require of imgRequires) {
-      assert(deps.includes(require));
+      assert(depValues.includes(require));
     }
     utils.checkResult(content, 'src-require');
   });
@@ -86,11 +88,12 @@ describe('Pugloader', () => {
     });
 
     const { content, deps } = loader.load();
+    const depValues = utils.flatObjectValues(deps);
     const imgRequires = [
       path.resolve(__dirname, 'img.png'),
     ];
     for (const require of imgRequires) {
-      assert(deps.includes(require));
+      assert(depValues.includes(require));
     }
     utils.checkResult(content, 'data-src-require');
   });
@@ -103,13 +106,14 @@ describe('Pugloader', () => {
     });
 
     const { content, deps } = loader.load();
+    const depValues = utils.flatObjectValues(deps);
     const imgRequires = [
       path.resolve(__dirname, 'img.png'),
       path.resolve(__dirname, 'case/footer.png'),
     ];
     for (const require of imgRequires) {
-      assert(deps.includes(require));
-      assert.equal(deps.length, imgRequires.length);
+      assert(depValues.includes(require));
+      assert.equal(depValues.length, imgRequires.length);
     }
     utils.checkResult(content, 'sub-require');
   });
