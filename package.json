@@ -1,6 +1,6 @@
 {
   "name": "pug-package-loader",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "loader loading dependencies of pug templates, and pacakging",
   "main": "index.js",
   "scripts": {
@@ -38,7 +38,7 @@
     "type": "git",
     "url": "git+ssh://git@github.com/cxphoe/pug-package-loader.git"
   },
-  "author": "phoe",
+  "author": "cxphoe",
   "bugs": {
     "url": "https://github.com/cxphoe/pug-package-loader/issues"
   },
